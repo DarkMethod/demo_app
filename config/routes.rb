@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'demo_app/signup'
-
-  get 'demo_app/reg_users'
-
-  get 'demo_app/user_info'
+  root  'demo_app#signup'
+  match '/signup',    to: 'demo_app#signup',    via: 'get'
+  match '/users',   to: 'demo_app#reg_users',   via: 'get'
+  match '/profile', to: 'demo_app#user_info', via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
