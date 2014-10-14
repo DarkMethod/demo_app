@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  root  'demo_app#signup'
-  match '/signup',    to: 'demo_app#signup',    via: 'get'
+  get 'users/new'
+
+  resources :users
+  root  'users#signup'
+  match '/signup',    to: 'users#signup',    via: 'get'
   match '/users',   to: 'demo_app#reg_users',   via: 'get'
   match '/profile', to: 'demo_app#user_info', via: 'get'
 

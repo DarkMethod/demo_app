@@ -1,12 +1,14 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
-    <div class="container">
-      <%= link_to "sample app", signup_path, id: "logo" %>
+    <div class="container-fluid">
+      <div>
+      <%= link_to "Demo App", signup_path, class: "brand" %>
+      </div>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Sign Up", signup_path %></li>
-          <li><%= link_to "Users", users_path %></li>
-          <li><%= link_to "Profile", profile_path %></li>
+          <li class="<%= 'active' if current_page?(signup_path) %>"><%= link_to "Sign Up", signup_path %></li>
+          <li class="<%= 'active' if current_page?(users_path) %>"><%= link_to "Users", users_path %></li>
+          <li class="<%= 'active' if current_page?(profile_path) %>"><%= link_to "Profile", profile_path %></li>
         </ul>
       </nav>
     </div>
